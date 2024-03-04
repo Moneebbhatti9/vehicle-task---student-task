@@ -1,0 +1,31 @@
+<div class="form-container">
+  <div class="card">
+    <h1>Product Form To Patch Data</h1>
+    <form *ngIf="product">
+      <div>
+        <label>Title:</label>
+        <input type="text" [(ngModel)]="product.title" name="title" />
+      </div>
+      <div>
+        <label>Description:</label>
+        <input
+          type="text"
+          [(ngModel)]="product.description"
+          name="description"
+        />
+      </div>
+      <div>
+        <label>Category:</label>
+        <input type="text" [(ngModel)]="product.category" name="category" />
+      </div>
+      <div>
+        <label>Rating:</label>
+        <input type="number" [(ngModel)]="product.rating" name="rating" />
+      </div>
+      <div>
+        <label>Stock:</label>
+        <input type="number" [(ngModel)]="product.stock" name="stock" />
+      </div>
+    </form>
+  </div>
+</div>

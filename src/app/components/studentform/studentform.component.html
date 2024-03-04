@@ -1,0 +1,121 @@
+<div class="form-container">
+  <div class="card">
+    <h1>Student Form</h1>
+    <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" formControlName="firstName" />
+      </div>
+
+      <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" formControlName="lastName" />
+      </div>
+
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" />
+      </div>
+
+      <div>
+        <label for="gender">Gender:</label>
+        <select id="gender" formControlName="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" formControlName="dob" required />
+      </div>
+
+      <div>
+        <label for="class">Class:</label>
+        <input type="text" id="class" formControlName="class" required />
+      </div>
+
+      <div>
+        <label for="address">Address:</label>
+        <input type="text" id="address" formControlName="address" />
+      </div>
+
+      <div>
+        <label for="phoneNo">Phone Number:</label>
+        <input type="tel" id="phoneNo" formControlName="phoneNo" />
+      </div>
+
+      <div>
+        <label for="parentsEmail">Parents Email:</label>
+        <input
+          type="email"
+          id="parentsEmail"
+          formControlName="parentsEmail"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="description">Description:</label>
+        <textarea id="description" formControlName="description"></textarea>
+      </div>
+
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password" />
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<div class="form-container" *ngFor="let table of submittedData">
+  <div *ngIf="submittedData.length > 0" class="card">
+    <h3>Form Data:</h3>
+    <table>
+      <tbody>
+        <tr>
+          <th>First Name:</th>
+          <td>{{ table.firstName }}</td>
+        </tr>
+        <tr>
+          <th>Last Name:</th>
+          <td>{{ table.lastName }}</td>
+        </tr>
+        <tr>
+          <th>Email:</th>
+          <td>{{ table.email }}</td>
+        </tr>
+        <tr>
+          <th>Gender:/th></th>
+          <td>{{ table.gender }}</td>
+        </tr>
+        <tr>
+          <th>Date of Birth:</th>
+          <td>{{ table.dob | date }}</td>
+        </tr>
+        <tr>
+          <th>Class:</th>
+          <td>{{ table.class }}</td>
+        </tr>
+        <tr>
+          <th>Address:</th>
+          <td>{{ table.address }}</td>
+        </tr>
+        <tr>
+          <th>Phone Number:</th>
+          <td>{{ table.phoneNo }}</td>
+        </tr>
+        <tr>
+          <th>Parents Email:</th>
+          <td>{{ table.parentsEmail }}</td>
+        </tr>
+        <tr>
+          <th>Description:</th>
+          <td>{{ table.description }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

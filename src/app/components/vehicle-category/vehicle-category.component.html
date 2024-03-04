@@ -1,0 +1,18 @@
+<div class="body">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of VehicleCategories">
+        <td>{{ category.id }}</td>
+        <td>
+          <li>{{ category.name }}</li>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
